@@ -1,3 +1,6 @@
+<%= cl_image_tag("wxj62ldimcfodgb3hpdq",
+      width: 400, height: 300, crop: :fill) %>
+
 <% @cocktails.each do |cocktail| %>
   <h1><%=cocktail.name%></h1>
   <p>Ingredients</p>
@@ -13,3 +16,5 @@
   <%= link_to "Add Dose", new_cocktail_dose_path(cocktail.id) %>
   <hr>
 <% end %>
+
+
