@@ -1,20 +1,30 @@
-<%= cl_image_tag("wxj62ldimcfodgb3hpdq",
-      width: 400, height: 300, crop: :fill) %>
-
 <% @cocktails.each do |cocktail| %>
-  <h1><%=cocktail.name%></h1>
-  <p>Ingredients</p>
-  <ul>
-    <% cocktail.doses.each do |dose| %>
-      <% if dose.ingredient.nil? %>
-        <li>No ingredients</li>
-      <% else %>
-        <li><%=dose.ingredient.name%> | <%= dose.description %> | <%= link_to "Delete Dose", dose_path(dose.id),  method: :delete, data: { confirm: "Are you sure?" }  %></li>
-      <% end %>
+  <div class="product">
+    <div class='product-upvote'>
+      <div class="product-arrow"></div>
+      <div class='product-count'>95</div>
+    </div>
+    <% if !cocktail.photo.nil? %>
+      <%= cl_image_tag cocktail.photo.path, alt:"cocktail", class: "product-image hidden-xs" %>
     <% end %>
-  </ul>
-  <%= link_to "Add Dose", new_cocktail_dose_path(cocktail.id) %>
-  <hr>
+    <div class='product-body'>
+      <h3><%=cocktail.name%></h3>
+       <% cocktail.doses.each do |dose| %>
+        <% if dose.ingredient.nil? %>
+          <span>No Ingredients</span>
+        <% else %>
+          <span>
+            <%=dose.ingredient.name%> | <%= dose.description %> | <%= link_to "Delete Dose", dose_path(dose.id),  method: :delete, data: { confirm: "Are you sure?" }  %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
+    <ul class="list-inline product-controls hidden-sm hidden-xs">
+      <li><a href=""><i class="fa fa-heart"></i></a></li>
+      <li><a href=""><i class="fa fa-share"></i></a></li>
+      <li><a href=""><i class="fa fa-star"></i></a></li>
+    </ul>
+  </div>
 <% end %>
 
 

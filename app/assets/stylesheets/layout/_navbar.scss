@@ -10,6 +10,14 @@
   justify-content: space-between;
 }
 
+.logo-text {
+  font-family: 'Great Vibes', cursive;
+  display: inline-block;
+  font-size: 25px;
+  color: black;
+  padding-top: 10px;
+}
+
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;

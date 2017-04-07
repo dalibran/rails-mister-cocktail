@@ -17,3 +17,5 @@ Cocktail.create(name: "Martini")
 Dose.create(description: "5ml", ingredient_id: 3, cocktail_id: 3)
 Dose.create(description: "10ml", ingredient_id: 2, cocktail_id: 2)
 Dose.create(description: "3ml", ingredient_id: 1, cocktail_id: 1)
+
+
